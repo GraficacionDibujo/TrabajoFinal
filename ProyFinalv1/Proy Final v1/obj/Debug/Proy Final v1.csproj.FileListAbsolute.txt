@@ -26,3 +26,12 @@ C:\Users\Carlos9808\Desktop\ProyectoGraficacion\ProyFinalv1\Proy Final v1\obj\De
 C:\Users\Carlos9808\Desktop\ProyectoGraficacion\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.csproj.CoreCompileInputs.cache
 C:\Users\Carlos9808\Desktop\ProyectoGraficacion\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.exe
 C:\Users\Carlos9808\Desktop\ProyectoGraficacion\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.pdb
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\bin\Debug\Proy Final v1.exe.config
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.exe
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.pdb
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\bin\Debug\Proy Final v1.exe
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\bin\Debug\Proy Final v1.pdb
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.csprojResolveAssemblyReference.cache
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy_Final_v1.Form1.resources
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy_Final_v1.Properties.Resources.resources
+D:\Universidad\Quinto Semestre\Graficacion\Proyecto Final\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.csproj.GenerateResource.Cache
