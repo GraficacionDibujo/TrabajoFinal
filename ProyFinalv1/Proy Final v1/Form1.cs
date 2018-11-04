@@ -272,76 +272,102 @@ namespace Proy_Final_v1
 
 
             //Timon Agarradera1
-            GraphicsPath BolaTimon1 = new GraphicsPath();
-
-            List<Point> Curvas8 = new List<Point>();//Primera curva
+            List<Point> Curvas8 = new List<Point>();
             Curvas8.Add(new Point(287, 181));
-           
             Curvas8.Add(new Point(240, 105));
             Curvas8.Add(new Point(273, 76));
             Curvas8.Add(new Point(318, 156));
-            //  Curva8.Add(new Point(285, 175));
             Dibujo.FillClosedCurve(BrochaNegra, Curvas8.ToArray());
             Dibujo.DrawClosedCurve(LapizAzul, Curvas8.ToArray());
 
-            BolaTimon1.AddCurve(Curvas8.ToArray(),10);
-            BolaTimon1.CloseFigure();
-            // Dibujo.DrawPath(LapizRojo, BolaTimon1);
-
+      
 
             //Timon Agarradera2
             List<Point> Curvas9 = new List<Point>();//Primera curva
             Curvas9.Add(new Point(212, 406));
-
             Curvas9.Add(new Point(223, 448));
             Curvas9.Add(new Point(299, 415));
             Curvas9.Add(new Point(286, 375));
-            //  Curva8.Add(new Point(285, 175));
-           // Dibujo.FillClosedCurve(BrochaNegra, Curva9.ToArray());
             Dibujo.DrawClosedCurve(LapizAzul, Curvas9.ToArray());
 
 
-            // Dibujo.DrawPath(LapizRojo, BolaTimon1);
-
-            GraphicsPath BolaTimon3 = new GraphicsPath();
-
+            //Timon Agarradera3
             List<Point> Curvas10 = new List<Point>();//Primera curva
             Curvas10.Add(new Point(327, 605));
-
             Curvas10.Add(new Point(308, 664));
             Curvas10.Add(new Point(307, 673));
             Curvas10.Add(new Point(320, 696));
             Curvas10.Add(new Point(352, 684));
             Curvas10.Add(new Point(363, 609));
-            //  Curva8.Add(new Point(285, 175));
-            // Dibujo.FillClosedCurve(BrochaNegra, Curva9.ToArray());
             Dibujo.DrawClosedCurve(LapizAzul, Curvas10.ToArray());
 
-            BolaTimon3.AddCurve(Curvas10.ToArray(), 10);
-            BolaTimon3.CloseFigure();
 
-            // Dibujo.DrawPath(LapizRojo, BolaTimon1);
 
             GraphicsPath PaloTimon = new GraphicsPath();
             PaloTimon.AddLine(new Point(406, 289), new Point(427, 143));
-            List<Point> Curvas11 = new List<Point>();//Primera curva
-
+            List<Point> Curvas11 = new List<Point>();
             Curvas11.Add(new Point(427, 143));
             Curvas11.Add(new Point(442, 142));
             Curvas11.Add(new Point(462, 152));
-
             PaloTimon.AddCurve(Curvas11.ToArray(),1);
             PaloTimon.AddLine(new Point(462, 152), new Point(434, 291));
             PaloTimon.CloseFigure();
             Dibujo.DrawPath(LapizRojo, PaloTimon);
 
 
-    
+
+            GraphicsPath Timon = new GraphicsPath();
+
+            List<Point> Curvas12 = new List<Point>();
+
+            Curvas12.Add(new Point(267, 375));
+            Curvas12.Add(new Point(269, 279));
+            Curvas12.Add(new Point(285, 182));
+
+            Timon.AddCurve(Curvas12.ToArray(), 1);
+            List<Point> Curvas13 = new List<Point>();
+
+            Curvas13.Add(new Point(285, 182));
+            Curvas13.Add(new Point(304, 180));
+            Curvas13.Add(new Point(312, 174));
+
+            Timon.AddCurve(Curvas13.ToArray(), 1);
+            List<Point> Curvas14 = new List<Point>();
+            Curvas14.Add(new Point(312, 174));
+            Curvas14.Add(new Point(317, 164));
+
+            Curvas14.Add(new Point(319, 153));
+            Timon.AddCurve(Curvas14.ToArray(), 1);
+            List<Point> Curvas15 = new List<Point>();
+            Curvas15.Add(new Point(319, 153));
+            Curvas15.Add(new Point(305, 121));
+
+            Timon.AddCurve(Curvas15.ToArray(), 1);
+            List<Point> Curvas16 = new List<Point>();
+            Curvas16.Add(new Point(305, 121));
+            Curvas16.Add(new Point(325, 85));
+
+            Curvas16.Add(new Point(353, 63));
+
+            Timon.AddCurve(Curvas16.ToArray(), 1);
+
+
+            List<Point> Curva17 = new List<Point>();
+            Curva17.Add(new Point(353, 63));
+            Curva17.Add(new Point(386, 57));
+
+            Curva17.Add(new Point(440, 56));
+
+            Timon.AddCurve(Curva17.ToArray(), 1);
+
+            Timon.AddLine(new Point(440,56), new Point(448,26));
+
+            Dibujo.DrawPath(LapizRojo, Timon);
 
 
 
 
-          
+
 
 
 
