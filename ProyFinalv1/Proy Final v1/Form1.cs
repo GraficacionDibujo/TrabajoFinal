@@ -220,7 +220,7 @@ namespace Proy_Final_v1
 
 
             //Timon Agarradera2
-            GraphicsPath BolaTimon2 = new GraphicsPath();
+ 
 
             List<Point> Curva9 = new List<Point>();//Primera curva
             Curva9.Add(new Point(212, 406));
@@ -232,9 +232,50 @@ namespace Proy_Final_v1
            // Dibujo.FillClosedCurve(BrochaNegra, Curva9.ToArray());
             Dibujo.DrawClosedCurve(LapizAzul, Curva9.ToArray());
 
-            BolaTimon2.AddCurve(Curva9.ToArray(), 10);
-            BolaTimon2.CloseFigure();
+
             // Dibujo.DrawPath(LapizRojo, BolaTimon1);
+
+            GraphicsPath BolaTimon3 = new GraphicsPath();
+
+            List<Point> Curva10 = new List<Point>();//Primera curva
+            Curva10.Add(new Point(327, 605));
+
+            Curva10.Add(new Point(308, 664));
+            Curva10.Add(new Point(307, 673));
+            Curva10.Add(new Point(320, 696));
+            Curva10.Add(new Point(352, 684));
+            Curva10.Add(new Point(363, 609));
+            //  Curva8.Add(new Point(285, 175));
+            // Dibujo.FillClosedCurve(BrochaNegra, Curva9.ToArray());
+            Dibujo.DrawClosedCurve(LapizAzul, Curva10.ToArray());
+
+            BolaTimon3.AddCurve(Curva10.ToArray(), 10);
+            BolaTimon3.CloseFigure();
+
+            // Dibujo.DrawPath(LapizRojo, BolaTimon1);
+
+            GraphicsPath PaloTimon = new GraphicsPath();
+            PaloTimon.AddLine(new Point(406, 289), new Point(427, 143));
+            List<Point> Curva11 = new List<Point>();//Primera curva
+
+            Curva11.Add(new Point(427, 143));
+            Curva11.Add(new Point(442, 142));
+            Curva11.Add(new Point(462, 152));
+
+            PaloTimon.AddCurve(Curva11.ToArray(),1);
+            PaloTimon.AddLine(new Point(462, 152), new Point(434, 291));
+            PaloTimon.CloseFigure();
+            Dibujo.DrawPath(LapizRojo, PaloTimon);
+
+
+    
+
+
+
+
+          
+
+
 
         }
 

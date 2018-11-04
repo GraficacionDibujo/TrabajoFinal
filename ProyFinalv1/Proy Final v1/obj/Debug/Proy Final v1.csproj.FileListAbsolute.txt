@@ -45,3 +45,13 @@ C:\Users\Admin\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Fin
 C:\Users\Admin\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.exe
 C:\Users\Admin\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.pdb
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\bin\Debug\Proy Final v1.exe.config
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\bin\Debug\Proy Final v1.exe
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\bin\Debug\Proy Final v1.pdb
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.csprojAssemblyReference.cache
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy_Final_v1.Form1.resources
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy_Final_v1.Properties.Resources.resources
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.csproj.GenerateResource.cache
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.csproj.CoreCompileInputs.cache
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.exe
+C:\Users\Carlos9808\Desktop\TrabajoFinal\ProyFinalv1\Proy Final v1\obj\Debug\Proy Final v1.pdb
