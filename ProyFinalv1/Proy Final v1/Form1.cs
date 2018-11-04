@@ -29,9 +29,10 @@ namespace Proy_Final_v1
         //Codigo Del Dibujo
         //LAPIZ
         Pen LapizRojo = new Pen(Color.Red, 2);
-        Pen LapizAzul = new Pen(Color.Blue, 2);
+        Pen LapizAzul = new Pen(Color.Blue, 5);
         SolidBrush BrochaCafe = new SolidBrush(Color.Brown);
         SolidBrush BrochaAzul = new SolidBrush(Color.Blue);
+        SolidBrush BrochaNegra = new SolidBrush(Color.Black);
         SolidBrush BrochaVerde = new SolidBrush(Color.Green);
         Graphics Dibujo; //Objeto Graphics
         private void Cuadro_Paint(object sender, PaintEventArgs e)
@@ -199,6 +200,7 @@ namespace Proy_Final_v1
             CuartaForma.CloseFigure();
             Dibujo.DrawPath(LapizRojo, CuartaForma);
 
+
             //--Primera forma poligonal con curvas, cerca del salvavidas
             GraphicsPath QuintaForma = new GraphicsPath();
             QuintaForma.AddLine(982, 202, 1157, 201);//Primera linea
@@ -267,6 +269,82 @@ namespace Proy_Final_v1
             QuintaForma.AddCurve(Curva16.ToArray(), 1);
             QuintaForma.CloseFigure();
             Dibujo.DrawPath(LapizAzul, QuintaForma);
+
+
+            //Timon Agarradera1
+            GraphicsPath BolaTimon1 = new GraphicsPath();
+
+            List<Point> Curvas8 = new List<Point>();//Primera curva
+            Curvas8.Add(new Point(287, 181));
+           
+            Curvas8.Add(new Point(240, 105));
+            Curvas8.Add(new Point(273, 76));
+            Curvas8.Add(new Point(318, 156));
+            //  Curva8.Add(new Point(285, 175));
+            Dibujo.FillClosedCurve(BrochaNegra, Curvas8.ToArray());
+            Dibujo.DrawClosedCurve(LapizAzul, Curvas8.ToArray());
+
+            BolaTimon1.AddCurve(Curvas8.ToArray(),10);
+            BolaTimon1.CloseFigure();
+            // Dibujo.DrawPath(LapizRojo, BolaTimon1);
+
+
+            //Timon Agarradera2
+            List<Point> Curvas9 = new List<Point>();//Primera curva
+            Curvas9.Add(new Point(212, 406));
+
+            Curvas9.Add(new Point(223, 448));
+            Curvas9.Add(new Point(299, 415));
+            Curvas9.Add(new Point(286, 375));
+            //  Curva8.Add(new Point(285, 175));
+           // Dibujo.FillClosedCurve(BrochaNegra, Curva9.ToArray());
+            Dibujo.DrawClosedCurve(LapizAzul, Curvas9.ToArray());
+
+
+            // Dibujo.DrawPath(LapizRojo, BolaTimon1);
+
+            GraphicsPath BolaTimon3 = new GraphicsPath();
+
+            List<Point> Curvas10 = new List<Point>();//Primera curva
+            Curvas10.Add(new Point(327, 605));
+
+            Curvas10.Add(new Point(308, 664));
+            Curvas10.Add(new Point(307, 673));
+            Curvas10.Add(new Point(320, 696));
+            Curvas10.Add(new Point(352, 684));
+            Curvas10.Add(new Point(363, 609));
+            //  Curva8.Add(new Point(285, 175));
+            // Dibujo.FillClosedCurve(BrochaNegra, Curva9.ToArray());
+            Dibujo.DrawClosedCurve(LapizAzul, Curvas10.ToArray());
+
+            BolaTimon3.AddCurve(Curvas10.ToArray(), 10);
+            BolaTimon3.CloseFigure();
+
+            // Dibujo.DrawPath(LapizRojo, BolaTimon1);
+
+            GraphicsPath PaloTimon = new GraphicsPath();
+            PaloTimon.AddLine(new Point(406, 289), new Point(427, 143));
+            List<Point> Curvas11 = new List<Point>();//Primera curva
+
+            Curvas11.Add(new Point(427, 143));
+            Curvas11.Add(new Point(442, 142));
+            Curvas11.Add(new Point(462, 152));
+
+            PaloTimon.AddCurve(Curvas11.ToArray(),1);
+            PaloTimon.AddLine(new Point(462, 152), new Point(434, 291));
+            PaloTimon.CloseFigure();
+            Dibujo.DrawPath(LapizRojo, PaloTimon);
+
+
+    
+
+
+
+
+          
+
+
+
         }
 
     }
