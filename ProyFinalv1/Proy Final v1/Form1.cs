@@ -28,7 +28,7 @@ namespace Proy_Final_v1
         }
         //Codigo Del Dibujo
         //LAPIZ
-        Pen LapizRojo = new Pen(Color.Red, 2);
+        Pen LapizRojo = new Pen(Color.Red, 5);
         Pen LapizAzul = new Pen(Color.Blue, 5);
         SolidBrush BrochaCafe = new SolidBrush(Color.Brown);
         SolidBrush BrochaAzul = new SolidBrush(Color.Blue);
@@ -352,15 +352,105 @@ namespace Proy_Final_v1
             Timon.AddCurve(Curvas16.ToArray(), 1);
 
 
-            List<Point> Curva17 = new List<Point>();
-            Curva17.Add(new Point(353, 63));
-            Curva17.Add(new Point(386, 57));
+            List<Point> Curvas17 = new List<Point>();
+            Curvas17.Add(new Point(353, 63));
+            Curvas17.Add(new Point(386, 56));
+            Timon.AddCurve(Curvas17.ToArray(), 1);
 
-            Curva17.Add(new Point(440, 56));
+            List<Point> Curvas18 = new List<Point>();
+            Curvas18.Add(new Point(386, 56));
+            Curvas18.Add(new Point(413, 54));
 
-            Timon.AddCurve(Curva17.ToArray(), 1);
+            Curvas18.Add(new Point(440, 59));
 
-            Timon.AddLine(new Point(440,56), new Point(448,26));
+          //  Curvas18.Add(new Point(476, 91));
+
+            Timon.AddCurve(Curvas18.ToArray(), 1);
+
+
+            List<Point> Curvas19 = new List<Point>();
+            Curvas19.Add(new Point(440, 59));
+            Curvas19.Add(new Point(473, 90));
+
+            Curvas19.Add(new Point(495, 132));
+            Curvas19.Add(new Point(510, 194));
+
+
+            Timon.AddCurve(Curvas19.ToArray(), 1);
+
+            List<Point> Curvas20 = new List<Point>();
+            Curvas20.Add(new Point(510, 194));
+            Curvas20.Add(new Point(520, 268));
+
+            Curvas20.Add(new Point(522, 355));
+
+
+            Timon.AddCurve(Curvas20.ToArray(), 1);
+
+            List<Point> Curvas21 = new List<Point>();
+            Curvas21.Add(new Point(522, 355));
+            Curvas21.Add(new Point(519, 430));
+
+            Curvas21.Add(new Point(512, 503));
+
+
+            Timon.AddCurve(Curvas21.ToArray(), 1);
+
+
+
+            List<Point> Curvas22 = new List<Point>();
+            Curvas22.Add(new Point(512, 503));
+            Curvas22.Add(new Point(493, 564));
+
+            Curvas22.Add(new Point(480, 590));
+
+
+            Timon.AddCurve(Curvas22.ToArray(), 1);
+
+            List<Point> Curvas23 = new List<Point>();
+            Curvas23.Add(new Point(480, 590));
+            Curvas23.Add(new Point(454, 620));
+           Curvas23.Add(new Point(415, 636));
+            Curvas23.Add(new Point(366, 635));
+
+
+            Timon.AddCurve(Curvas23.ToArray(), 1);
+
+
+            List<Point> Curvas24 = new List<Point>();
+            Curvas24.Add(new Point(366, 635));
+            Curvas24.Add(new Point(364, 609));
+            Curvas24.Add(new Point(350, 596));
+
+
+            Timon.AddCurve(Curvas24.ToArray(), 1);
+
+
+            List<Point> Curvas25 = new List<Point>();
+            Curvas25.Add(new Point(350, 596));
+            Curvas25.Add(new Point(334, 597));
+            Curvas25.Add(new Point(321, 611));
+
+
+            Timon.AddCurve(Curvas25.ToArray(), 1);
+
+
+            List<Point> Curvas26 = new List<Point>();
+            Curvas26.Add(new Point(321, 611));
+            Curvas26.Add(new Point(285, 531));
+            Curvas26.Add(new Point(268, 435));
+
+
+            Timon.AddCurve(Curvas26.ToArray(), 1);
+            Timon.AddLine(new Point(268, 435), new Point(294,421));
+            List<Point> Curvas27 = new List<Point>();
+            Curvas27.Add(new Point(294, 421));
+            Curvas27.Add(new Point(303, 395));
+            Curvas27.Add(new Point(285, 373));
+
+            Timon.AddCurve(Curvas27.ToArray(), 1);
+            Timon.AddLine(new Point(285, 373), new Point(267, 375));
+
 
             Dibujo.DrawPath(LapizRojo, Timon);
 
