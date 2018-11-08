@@ -40,243 +40,254 @@ namespace Proy_Final_v1
             //Isauro
             Dibujo = e.Graphics; //Para poder dibujar
             //Lado Izquierdo, Esquina Inferior, Primer rectangulo, lado uno
-            Point A = new Point(99, 718);
-            Point B = new Point(94, 305);
-            //Dibujo.DrawLine(LapizA, p1, p2);
-            Point E = new Point(94, 305);
-            Point F = new Point(204, 312);
-            //Dibujo.DrawLine(LapizA, A, B);
-            Point C = new Point(204, 312);//Lado Izquierdo, Esquina Inferior, Primer rectangulo, lado dos
-            Point D = new Point(209, 493);//Mitad de la linea
-            Point G = new Point(216, 715);
-         
-
-            PointF[] RectanguloII = new PointF[8];
-            RectanguloII[0] = A;
-            RectanguloII[1] = B;
-
-            RectanguloII[2] = E;
-            RectanguloII[3] = F;
-
-            RectanguloII[4] = C;
-            RectanguloII[5] = D;
-            RectanguloII[6] = G;
-            RectanguloII[7] = A;
-
-            Dibujo.DrawPolygon(LapizAzul, RectanguloII);
-            Dibujo.FillPolygon(BrochaCafe, RectanguloII);
+            //Point A = new Point(99, 718);
+            //Point B = new Point(94, 305);
+            ////Dibujo.DrawLine(LapizA, p1, p2);
+            //Point E = new Point(94, 305);
+            //Point F = new Point(204, 312);
+            ////Dibujo.DrawLine(LapizA, A, B);
+            //Point C = new Point(204, 312);//Lado Izquierdo, Esquina Inferior, Primer rectangulo, lado dos
+            //Point D = new Point(209, 493);//Mitad de la linea
+            //Point G = new Point(216, 715);
 
 
-            PointF[] RectanguloII2 = new PointF[5];
-            Point[] Arreglo1 =
-            {
-                new Point(),new Point(), new Point(),new Point(), new Point()
-            };
-            Dibujo.DrawPolygon(LapizAzul, Arreglo1);
-            Dibujo.FillPolygon(BrochaCafe, Arreglo1);
+            //PointF[] RectanguloII = new PointF[8];
+            //RectanguloII[0] = A;
+            //RectanguloII[1] = B;
 
-            Point A1 = new Point(94, 305);
-            Point B1 = new Point(269, 250);
-            Point C1 = new Point(265, 284);
-            Point D1 = new Point(204, 312);
+            //RectanguloII[2] = E;
+            //RectanguloII[3] = F;
 
-            RectanguloII2[0] = A1;
-            RectanguloII2[1] = B1;
-            RectanguloII2[2] = C1;
-            RectanguloII2[3] = D1;
-            RectanguloII2[4] = A1;
+            //RectanguloII[4] = C;
+            //RectanguloII[5] = D;
+            //RectanguloII[6] = G;
+            //RectanguloII[7] = A;
 
-            Dibujo.DrawPolygon(LapizAzul, RectanguloII2);
-            Dibujo.FillPolygon(BrochaCafe, RectanguloII2);
-
-            //--Primer rectangulo, lado izquierdo, cerca del timon ----- Isauro
-            List<Point> PrimerRectantulo = new List<Point>();
-            PrimerRectantulo.Add(new Point(0, 231));
-            PrimerRectantulo.Add(new Point(270, 165));
-            PrimerRectantulo.Add(new Point(285, 178));
-            PrimerRectantulo.Add(new Point(272, 249));
-            PrimerRectantulo.Add(new Point(0, 337));
-            PrimerRectantulo.Add(new Point(0, 231));
-            Dibujo.DrawPolygon(LapizAzul, PrimerRectantulo.ToArray());
-            Dibujo.FillPolygon(BrochaCafe, PrimerRectantulo.ToArray());
-
-            //--Segundo rectangulo, lado izquierdo inferior
-            List<Point> SegundoRectangulo = new List<Point>();
-            SegundoRectangulo.Add(new Point(1, 338));
-            SegundoRectangulo.Add(new Point(93, 309));
-            SegundoRectangulo.Add(new Point(99, 718));
-            SegundoRectangulo.Add(new Point(1, 719));
-            SegundoRectangulo.Add(new Point(1,338));
-            Dibujo.DrawPolygon(LapizAzul, SegundoRectangulo.ToArray());
-            Dibujo.FillPolygon(BrochaCafe, SegundoRectangulo.ToArray());
-
-            //--Primera forma (cuadrado), cerca del timon,lado izquierdo, lado superior      
-            GraphicsPath Path = new GraphicsPath(); 
-            Path.StartFigure();
-            Path.AddLine(206, 314, 266, 286);
-            Path.AddLine(266, 286, 263, 377);
-            List<Point> Curva1 = new List<Point>();
-            Curva1.Add(new Point(252,382));
-            Curva1.Add(new Point(232,390));
-            Curva1.Add(new Point(221, 396));
-            Curva1.Add(new Point(216, 399));
-            Curva1.Add(new Point(209, 406));
-            Path.AddCurve(Curva1.ToArray(), 3);
-            Path.CloseFigure();
-            Dibujo.DrawPath(LapizRojo, Path);
-            Dibujo.FillPath(BrochaCafe, Path);
-
-            // --Segunda forma (Rectangulo con curva),lado izquierdo,cerca del timon, lado inferior
-            GraphicsPath SegundaForma = new GraphicsPath();
-            SegundaForma.StartFigure();
-            List<Point> Curva2 = new List<Point>();//Primera curva
-            Curva2.Add(new Point(210, 443));
-            Curva2.Add(new Point(218, 450));
-            Curva2.Add(new Point(227, 453));
-            Curva2.Add(new Point(227, 453));
-            Curva2.Add(new Point(237, 452));
-            Curva2.Add(new Point(247, 450));
-            SegundaForma.AddCurve(Curva2.ToArray(),1);
-            SegundaForma.AddLine(247, 450, 265, 443);//Primera linea
-            List<Point> Curva3 = new List<Point>();//Segunda Curva
-            Curva3.Add(new Point(266, 455));
-            Curva3.Add(new Point(270, 487));
-            Curva3.Add(new Point(284, 543));
-            Curva3.Add(new Point(298, 579));
-            Curva3.Add(new Point(311, 603));
-            Curva3.Add(new Point(318, 615));
-            SegundaForma.AddCurve(Curva3.ToArray(),1);
-            List<Point> Curva4 = new List<Point>();//Tercera Curva
-            Curva4.Add(new Point(314, 627));
-            Curva4.Add(new Point(306, 652));
-            Curva4.Add(new Point(306, 677));
-            Curva4.Add(new Point(310, 693));
-            SegundaForma.AddCurve(Curva4.ToArray(),1);
-            SegundaForma.AddLine(310, 693, 276, 717);//Segunda Linea
-            SegundaForma.AddLine(276, 717, 216, 717);//Tercera linea
-            SegundaForma.CloseFigure();
-            Dibujo.DrawPath(LapizRojo, SegundaForma);
-            Dibujo.FillPath(BrochaVerde, SegundaForma);
-
-            //--Primera parte del rectangulo, lado derecho, Entre el timon y cara de mickey mouse, parte superior
-            GraphicsPath TerceraForma = new GraphicsPath();
-            TerceraForma.AddLine(499, 136, 710, 136);//Primera linea
-            TerceraForma.AddLine(710, 136, 722, 144);//Segunda linea
-            List<Point> Curva5 = new List<Point>();//Primera curva
-            Curva5.Add(new Point(712, 151));
-            Curva5.Add(new Point(689, 163));
-            Curva5.Add(new Point(671, 180));
-            Curva5.Add(new Point(676, 175));
-            Curva5.Add(new Point(665, 191));
-            TerceraForma.AddCurve(Curva5.ToArray(), 0);
-            TerceraForma.AddLine(661, 194, 633, 194);//Tercera linea
-            List<Point> Curva6 = new List<Point>();//Segunda Curva
-            Curva6.Add(new Point(623, 179));
-            Curva6.Add(new Point(600, 161));
-            Curva6.Add(new Point(578, 176));
-            Curva6.Add(new Point(580, 189));
-            Curva6.Add(new Point(584, 195));
-            TerceraForma.AddCurve(Curva6.ToArray(), 1);
-            TerceraForma.AddLine(584, 195, 514, 196);//Cuarta linea
-            TerceraForma.CloseFigure();
-            Dibujo.DrawPath(LapizAzul, TerceraForma);
-            //--Segunda parte del rectangulo, lado derecho,cerca de la cara de mickey, parte superior
-            GraphicsPath CuartaForma = new GraphicsPath();
-            CuartaForma.AddLine(896, 135, 1279, 139);//Primera linea
-            CuartaForma.AddLine(1279, 139, 1279, 205);//Segunda linea
-            CuartaForma.AddLine(1279, 205, 1219, 202);//Tercera linea
-            CuartaForma.AddLine(1219, 202, 1156, 199);//Cuarta linea
-            CuartaForma.AddLine(1156, 199, 1103, 199);//Quinta linea
-            CuartaForma.AddLine(1103, 199, 983, 200);//Sexta linea
-            List<Point> Curva7 = new List<Point>();//Primera curva
-            Curva7.Add(new Point(978, 186));
-            Curva7.Add(new Point(972, 176));
-            Curva7.Add(new Point(954, 160));
-            Curva7.Add(new Point(935, 151));
-            Curva7.Add(new Point(906, 148));
-            Curva7.Add(new Point(889, 152));
-            Curva7.Add(new Point(880, 154));
-            CuartaForma.AddCurve(Curva7.ToArray(),1);
-            CuartaForma.CloseFigure();
-            Dibujo.DrawPath(LapizRojo, CuartaForma);
+            //Dibujo.DrawPolygon(LapizAzul, RectanguloII);
+            //Dibujo.FillPolygon(BrochaCafe, RectanguloII);
 
 
-            //--Primera forma poligonal con curvas, cerca del salvavidas
-            GraphicsPath QuintaForma = new GraphicsPath();
-            QuintaForma.AddLine(982, 202, 1157, 201);//Primera linea
-            List<Point> Curva8 = new List<Point>();//Primera curva
-            Curva8.Add(new Point(1116, 208));
-            Curva8.Add(new Point(1071, 238));
-            Curva8.Add(new Point(1046, 264));
-            Curva8.Add(new Point(1026, 309));
-            Curva8.Add(new Point(1025, 324));
-            QuintaForma.AddCurve(Curva8.ToArray(), 1);
-            List<Point> Curva9 = new List<Point>();//Segunda curva
-            Curva9.Add(new Point(1019, 329));
-            Curva9.Add(new Point(1018, 336));
-            Curva9.Add(new Point(1023,348));
-            QuintaForma.AddCurve(Curva9.ToArray());
-            List<Point> Curva10 = new List<Point>();//Tercera curva
-            Curva10.Add(new Point(1030, 376));
-            Curva10.Add(new Point(1063, 423));
-            Curva10.Add(new Point(1087, 442));
-            Curva10.Add(new Point(1106, 452));
-            Curva10.Add(new Point(1114, 456));
-            QuintaForma.AddCurve(Curva10.ToArray(), 1);
-            List<Point> Curva11 = new List<Point>();//Cuarta curva
-            Curva11.Add(new Point(1170, 474));
-            Curva11.Add(new Point(1179, 476));
-            Curva11.Add(new Point(1185, 473));
-            QuintaForma.AddCurve(Curva11.ToArray(), 1);
-            List<Point> Curva12 = new List<Point>();//Quinta curva
-            Curva12.Add(new Point(1205, 472));
-            Curva12.Add(new Point(1228, 465));
-            Curva12.Add(new Point(1246, 458));
-            Curva12.Add(new Point(1264, 445));
-            Curva12.Add(new Point(1278, 432));
-            QuintaForma.AddCurve(Curva12.ToArray(), 1);
-            QuintaForma.AddLine(1278, 432, 1279, 514);//Segunda linea
-            QuintaForma.AddLine(1279, 514, 917, 507);//Tercera linea
-            List<Point> Curva13 = new List<Point>();//Sexta curva
-            Curva13.Add(new Point(920, 487));
-            Curva13.Add(new Point(922,474));
-            Curva13.Add(new Point(921,467));
-            QuintaForma.AddCurve(Curva13.ToArray(), 1);
-            List<Point> Curva14 = new List<Point>();//Septima curva
-            Curva14.Add(new Point(926, 449));
-            Curva14.Add(new Point(930, 426));
-            Curva14.Add(new Point(926, 396));
-            Curva14.Add(new Point(904, 359));
-            Curva14.Add(new Point(859, 339));
-            QuintaForma.AddCurve(Curva14.ToArray(), 1);
-            QuintaForma.AddLine(859, 339, 836, 332);//Cuarta linea
-            List<Point> Curva15 = new List<Point>();//Octava curva
-            Curva15.Add(new Point(860, 309));
-            Curva15.Add(new Point(867, 300));
-            Curva15.Add(new Point(877, 285));
-            Curva15.Add(new Point(884, 266));
-            Curva15.Add(new Point(887, 252));
-            QuintaForma.AddCurve(Curva15.ToArray(), 1);
-            List<Point> Curva16 = new List<Point>();//Novena curva
-            Curva16.Add(new Point(909, 262));
-            Curva16.Add(new Point(917, 263));
-            Curva16.Add(new Point(934, 262));
-            Curva16.Add(new Point(946, 259));
-            Curva16.Add(new Point(962, 249));
-            Curva16.Add(new Point(980, 232));
-            Curva16.Add(new Point(984, 218));
-            //Curva16.Add(new Point(983, 202));
-            QuintaForma.AddCurve(Curva16.ToArray(), 1);
-            QuintaForma.CloseFigure();
-            Dibujo.DrawPath(LapizAzul, QuintaForma);
+            //PointF[] RectanguloII2 = new PointF[5];
+            //Point[] Arreglo1 =
+            //{
+            //    new Point(),new Point(), new Point(),new Point(), new Point()
+            //};
+            //Dibujo.DrawPolygon(LapizAzul, Arreglo1);
+            //Dibujo.FillPolygon(BrochaCafe, Arreglo1);
 
-            Dibujo.DrawPath(LapizAzul, QuintaForma);
+            //Point A1 = new Point(94, 305);
+            //Point B1 = new Point(269, 250);
+            //Point C1 = new Point(265, 284);
+            //Point D1 = new Point(204, 312);
+
+            //RectanguloII2[0] = A1;
+            //RectanguloII2[1] = B1;
+            //RectanguloII2[2] = C1;
+            //RectanguloII2[3] = D1;
+            //RectanguloII2[4] = A1;
+
+            //Dibujo.DrawPolygon(LapizAzul, RectanguloII2);
+            //Dibujo.FillPolygon(BrochaCafe, RectanguloII2);
+
+            ////--Primer rectangulo, lado izquierdo, cerca del timon ----- Isauro
+            //List<Point> PrimerRectantulo = new List<Point>();
+            //PrimerRectantulo.Add(new Point(0, 231));
+            //PrimerRectantulo.Add(new Point(270, 165));
+            //PrimerRectantulo.Add(new Point(285, 178));
+            //PrimerRectantulo.Add(new Point(272, 249));
+            //PrimerRectantulo.Add(new Point(0, 337));
+            //PrimerRectantulo.Add(new Point(0, 231));
+            //Dibujo.DrawPolygon(LapizAzul, PrimerRectantulo.ToArray());
+            //Dibujo.FillPolygon(BrochaCafe, PrimerRectantulo.ToArray());
+
+            ////--Segundo rectangulo, lado izquierdo inferior
+            //List<Point> SegundoRectangulo = new List<Point>();
+            //SegundoRectangulo.Add(new Point(1, 338));
+            //SegundoRectangulo.Add(new Point(93, 309));
+            //SegundoRectangulo.Add(new Point(99, 718));
+            //SegundoRectangulo.Add(new Point(1, 719));
+            //SegundoRectangulo.Add(new Point(1, 338));
+            //Dibujo.DrawPolygon(LapizAzul, SegundoRectangulo.ToArray());
+            //Dibujo.FillPolygon(BrochaCafe, SegundoRectangulo.ToArray());
+
+            ////--Primera forma (cuadrado), cerca del timon,lado izquierdo, lado superior      
+            //GraphicsPath Path = new GraphicsPath();
+            //Path.StartFigure();
+            //Path.AddLine(206, 314, 266, 286);
+            //Path.AddLine(266, 286, 263, 377);
+            //List<Point> Curva1 = new List<Point>();
+            //Curva1.Add(new Point(252, 382));
+            //Curva1.Add(new Point(232, 390));
+            //Curva1.Add(new Point(221, 396));
+            //Curva1.Add(new Point(216, 399));
+            //Curva1.Add(new Point(209, 406));
+            //Path.AddCurve(Curva1.ToArray(), 3);
+            //Path.CloseFigure();
+            //Dibujo.DrawPath(LapizRojo, Path);
+            //Dibujo.FillPath(BrochaCafe, Path);
+
+            //// --Segunda forma (Rectangulo con curva),lado izquierdo,cerca del timon, lado inferior
+            //GraphicsPath SegundaForma = new GraphicsPath();
+            //SegundaForma.StartFigure();
+            //List<Point> Curva2 = new List<Point>();//Primera curva
+            //Curva2.Add(new Point(210, 443));
+            //Curva2.Add(new Point(218, 450));
+            //Curva2.Add(new Point(227, 453));
+            //Curva2.Add(new Point(227, 453));
+            //Curva2.Add(new Point(237, 452));
+            //Curva2.Add(new Point(247, 450));
+            //SegundaForma.AddCurve(Curva2.ToArray(), 1);
+            //SegundaForma.AddLine(247, 450, 265, 443);//Primera linea
+            //List<Point> Curva3 = new List<Point>();//Segunda Curva
+            //Curva3.Add(new Point(266, 455));
+            //Curva3.Add(new Point(270, 487));
+            //Curva3.Add(new Point(284, 543));
+            //Curva3.Add(new Point(298, 579));
+            //Curva3.Add(new Point(311, 603));
+            //Curva3.Add(new Point(318, 615));
+            //SegundaForma.AddCurve(Curva3.ToArray(), 1);
+            //List<Point> Curva4 = new List<Point>();//Tercera Curva
+            //Curva4.Add(new Point(314, 627));
+            //Curva4.Add(new Point(306, 652));
+            //Curva4.Add(new Point(306, 677));
+            //Curva4.Add(new Point(310, 693));
+            //SegundaForma.AddCurve(Curva4.ToArray(), 1);
+            //SegundaForma.AddLine(310, 693, 276, 717);//Segunda Linea
+            //SegundaForma.AddLine(276, 717, 216, 717);//Tercera linea
+            //SegundaForma.CloseFigure();
+            //Dibujo.DrawPath(LapizRojo, SegundaForma);
+            //Dibujo.FillPath(BrochaVerde, SegundaForma);
+
+            ////--Primera parte del rectangulo, lado derecho, Entre el timon y cara de mickey mouse, parte superior
+            //GraphicsPath TerceraForma = new GraphicsPath();
+            //TerceraForma.AddLine(499, 136, 710, 136);//Primera linea
+            //TerceraForma.AddLine(710, 136, 722, 144);//Segunda linea
+            //List<Point> Curva5 = new List<Point>();//Primera curva
+            //Curva5.Add(new Point(712, 151));
+            //Curva5.Add(new Point(689, 163));
+            //Curva5.Add(new Point(671, 180));
+            //Curva5.Add(new Point(676, 175));
+            //Curva5.Add(new Point(665, 191));
+            //TerceraForma.AddCurve(Curva5.ToArray(), 0);
+            //TerceraForma.AddLine(661, 194, 633, 194);//Tercera linea
+            //List<Point> Curva6 = new List<Point>();//Segunda Curva
+            //Curva6.Add(new Point(623, 179));
+            //Curva6.Add(new Point(600, 161));
+            //Curva6.Add(new Point(578, 176));
+            //Curva6.Add(new Point(580, 189));
+            //Curva6.Add(new Point(584, 195));
+            //TerceraForma.AddCurve(Curva6.ToArray(), 1);
+            //TerceraForma.AddLine(584, 195, 514, 196);//Cuarta linea
+            //TerceraForma.CloseFigure();
+            //Dibujo.DrawPath(LapizAzul, TerceraForma);
+            ////--Segunda parte del rectangulo, lado derecho,cerca de la cara de mickey, parte superior
+            //GraphicsPath CuartaForma = new GraphicsPath();
+            //CuartaForma.AddLine(896, 135, 1279, 139);//Primera linea
+            //CuartaForma.AddLine(1279, 139, 1279, 205);//Segunda linea
+            //CuartaForma.AddLine(1279, 205, 1219, 202);//Tercera linea
+            //CuartaForma.AddLine(1219, 202, 1156, 199);//Cuarta linea
+            //CuartaForma.AddLine(1156, 199, 1103, 199);//Quinta linea
+            //CuartaForma.AddLine(1103, 199, 983, 200);//Sexta linea
+            //List<Point> Curva7 = new List<Point>();//Primera curva
+            //Curva7.Add(new Point(978, 186));
+            //Curva7.Add(new Point(972, 176));
+            //Curva7.Add(new Point(954, 160));
+            //Curva7.Add(new Point(935, 151));
+            //Curva7.Add(new Point(906, 148));
+            //Curva7.Add(new Point(889, 152));
+            //Curva7.Add(new Point(880, 154));
+            //CuartaForma.AddCurve(Curva7.ToArray(), 1);
+            //CuartaForma.CloseFigure();
+            //Dibujo.DrawPath(LapizRojo, CuartaForma);
 
 
-           
+            ////--Primera forma poligonal con curvas, cerca del salvavidas
+            //GraphicsPath QuintaForma = new GraphicsPath();
+            //QuintaForma.AddLine(982, 202, 1157, 201);//Primera linea
+            //List<Point> Curva8 = new List<Point>();//Primera curva
+            //Curva8.Add(new Point(1116, 208));
+            //Curva8.Add(new Point(1071, 238));
+            //Curva8.Add(new Point(1046, 264));
+            //Curva8.Add(new Point(1026, 309));
+            //Curva8.Add(new Point(1025, 324));
+            //QuintaForma.AddCurve(Curva8.ToArray(), 1);
+            //List<Point> Curva9 = new List<Point>();//Segunda curva
+            //Curva9.Add(new Point(1019, 329));
+            //Curva9.Add(new Point(1018, 336));
+            //Curva9.Add(new Point(1023, 348));
+            //QuintaForma.AddCurve(Curva9.ToArray());
+            //List<Point> Curva10 = new List<Point>();//Tercera curva
+            //Curva10.Add(new Point(1030, 376));
+            //Curva10.Add(new Point(1063, 423));
+            //Curva10.Add(new Point(1087, 442));
+            //Curva10.Add(new Point(1106, 452));
+            //Curva10.Add(new Point(1114, 456));
+            //QuintaForma.AddCurve(Curva10.ToArray(), 1);
+            //List<Point> Curva11 = new List<Point>();//Cuarta curva
+            //Curva11.Add(new Point(1170, 474));
+            //Curva11.Add(new Point(1179, 476));
+            //Curva11.Add(new Point(1185, 473));
+            //QuintaForma.AddCurve(Curva11.ToArray(), 1);
+            //List<Point> Curva12 = new List<Point>();//Quinta curva
+            //Curva12.Add(new Point(1205, 472));
+            //Curva12.Add(new Point(1228, 465));
+            //Curva12.Add(new Point(1246, 458));
+            //Curva12.Add(new Point(1264, 445));
+            //Curva12.Add(new Point(1278, 432));
+            //QuintaForma.AddCurve(Curva12.ToArray(), 1);
+            //QuintaForma.AddLine(1278, 432, 1279, 514);//Segunda linea
+            //QuintaForma.AddLine(1279, 514, 917, 507);//Tercera linea
+            //List<Point> Curva13 = new List<Point>();//Sexta curva
+            //Curva13.Add(new Point(920, 487));
+            //Curva13.Add(new Point(922, 474));
+            //Curva13.Add(new Point(921, 467));
+            //QuintaForma.AddCurve(Curva13.ToArray(), 1);
+            //List<Point> Curva14 = new List<Point>();//Septima curva
+            //Curva14.Add(new Point(926, 449));
+            //Curva14.Add(new Point(930, 426));
+            //Curva14.Add(new Point(926, 396));
+            //Curva14.Add(new Point(904, 359));
+            //Curva14.Add(new Point(859, 339));
+            //QuintaForma.AddCurve(Curva14.ToArray(), 1);
+            //QuintaForma.AddLine(859, 339, 836, 332);//Cuarta linea
+            //List<Point> Curva15 = new List<Point>();//Octava curva
+            //Curva15.Add(new Point(860, 309));
+            //Curva15.Add(new Point(867, 300));
+            //Curva15.Add(new Point(877, 285));
+            //Curva15.Add(new Point(884, 266));
+            //Curva15.Add(new Point(887, 252));
+            //QuintaForma.AddCurve(Curva15.ToArray(), 1);
+            //List<Point> Curva16 = new List<Point>();//Novena curva
+            //Curva16.Add(new Point(909, 262));
+            //Curva16.Add(new Point(917, 263));
+            //Curva16.Add(new Point(934, 262));
+            //Curva16.Add(new Point(946, 259));
+            //Curva16.Add(new Point(962, 249));
+            //Curva16.Add(new Point(980, 232));
+            //Curva16.Add(new Point(984, 218));
+            ////Curva16.Add(new Point(983, 202));
+            //QuintaForma.AddCurve(Curva16.ToArray(), 1);
+            //QuintaForma.CloseFigure();
+            //Dibujo.DrawPath(LapizAzul, QuintaForma);
+
+            //Dibujo.DrawPath(LapizAzul, QuintaForma);
 
 
 
+            DibujarTimon();
+            DiibujarCabezaMickey();
+
+
+
+
+
+
+
+        }
+    
+
+        public void DibujarTimon()
+        {
 
 
 
@@ -338,7 +349,7 @@ namespace Proy_Final_v1
             List<Point> Curvas23 = new List<Point>();
             Curvas23.Add(new Point(480, 590));
             Curvas23.Add(new Point(454, 620));
-           Curvas23.Add(new Point(415, 636));
+            Curvas23.Add(new Point(415, 636));
             Curvas23.Add(new Point(366, 635));
             Timon.AddCurve(Curvas23.ToArray(), 1);
             List<Point> Curvas24 = new List<Point>();
@@ -356,17 +367,17 @@ namespace Proy_Final_v1
             Curvas26.Add(new Point(285, 531));
             Curvas26.Add(new Point(268, 435));
             Timon.AddCurve(Curvas26.ToArray(), 1);
-            Timon.AddLine(new Point(268, 435), new Point(294,421));
+            Timon.AddLine(new Point(268, 435), new Point(294, 421));
             List<Point> Curvas27 = new List<Point>();
             Curvas27.Add(new Point(294, 421));
             Curvas27.Add(new Point(303, 395));
             Curvas27.Add(new Point(285, 373));
             Timon.AddCurve(Curvas27.ToArray(), 1);
             Timon.AddLine(new Point(285, 373), new Point(267, 375));
-           Dibujo.FillPath(BrochaCafe, Timon);
+            Dibujo.FillPath(BrochaCafe, Timon);
 
             Dibujo.DrawPath(LapizRojo, Timon);
-   
+
 
 
             // Hecho por --Davalos
@@ -378,7 +389,7 @@ namespace Proy_Final_v1
             LineaInteriorTimon.AddCurve(Curvas30.ToArray(), 1);
             List<Point> Curvas31 = new List<Point>();
             Curvas31.Add(new Point(376, 610));
-            Curvas31.Add(new Point(352,574));
+            Curvas31.Add(new Point(352, 574));
             Curvas31.Add(new Point(334, 518));
             LineaInteriorTimon.AddCurve(Curvas31.ToArray(), 1);
             List<Point> Curvas32 = new List<Point>();
@@ -409,7 +420,7 @@ namespace Proy_Final_v1
             Dibujo.DrawPath(LapizRojo, LineaInteriorTimon);
 
 
-      
+
 
             // Hecho por --Davalos
             GraphicsPath CirculoInteriorTimon = new GraphicsPath();
@@ -578,14 +589,14 @@ namespace Proy_Final_v1
             Circulomano.AddCurve(Curvas57.ToArray(), 1);
             List<Point> Curvas58 = new List<Point>();
             Curvas58.Add(new Point(460, 318));
-            Curvas58.Add(new Point(463,333));
-            Curvas58.Add(new Point(464,356));
+            Curvas58.Add(new Point(463, 333));
+            Curvas58.Add(new Point(464, 356));
             Circulomano.AddCurve(Curvas58.ToArray(), 1);
             Circulomano.AddLine(464, 356, 453, 357);
             List<Point> Curvas59 = new List<Point>();
             Curvas59.Add(new Point(453, 357));
-            Curvas59.Add(new Point(451,339));
-            Curvas59.Add(new Point(443,327));
+            Curvas59.Add(new Point(451, 339));
+            Curvas59.Add(new Point(443, 327));
             Circulomano.AddCurve(Curvas59.ToArray(), 1);
             List<Point> Curvas60 = new List<Point>();
             Curvas60.Add(new Point(443, 327));
@@ -627,8 +638,8 @@ namespace Proy_Final_v1
             PaloTimon4.AddCurve(Curvas64.ToArray(), 1);
             List<Point> Curvas65 = new List<Point>();
             Curvas65.Add(new Point(451, 405));
-            Curvas65.Add(new Point(471,435));
-            Curvas65.Add(new Point(487,474));
+            Curvas65.Add(new Point(471, 435));
+            Curvas65.Add(new Point(487, 474));
             PaloTimon4.AddCurve(Curvas65.ToArray(), 1);
             List<Point> Curvas66 = new List<Point>();
             Curvas66.Add(new Point(487, 474));
@@ -651,12 +662,12 @@ namespace Proy_Final_v1
             Curvas68.Add(new Point(482, 290));
             Curvas68.Add(new Point(489, 297));
             Curvas68.Add(new Point(493, 318));
-           PaloTimon5.AddCurve(Curvas68.ToArray(), 1);
+            PaloTimon5.AddCurve(Curvas68.ToArray(), 1);
             List<Point> Curvas69 = new List<Point>();
             Curvas69.Add(new Point(493, 318));
             Curvas69.Add(new Point(489, 326));
             Curvas69.Add(new Point(479, 330));
-           PaloTimon5.AddCurve(Curvas69.ToArray(), 1);
+            PaloTimon5.AddCurve(Curvas69.ToArray(), 1);
             PaloTimon5.AddLine(479, 330, 464, 337);
             List<Point> Curvas70 = new List<Point>();
             Curvas70.Add(new Point(464, 337));
@@ -764,7 +775,7 @@ namespace Proy_Final_v1
             Curvas101.Add(new Point(484, 291));
             Curvas101.Add(new Point(472, 290));
             Curvas101.Add(new Point(456, 296));
-            
+
             LineaTimon3.AddCurve(Curvas101.ToArray(), 1);
             Dibujo.FillPath(BrochaCafe, LineaTimon3);
             Dibujo.DrawPath(LapizRojo, LineaTimon3);
@@ -834,12 +845,112 @@ namespace Proy_Final_v1
 
             Dibujo.DrawPath(LapizRojo, Lineatimon5);
 
-            Dibujo.DrawLine(LapizRojo,437, 408, 420, 404);
+            Dibujo.DrawLine(LapizRojo, 437, 408, 420, 404);
 
 
         }
 
-    }
+
+        public void DiibujarCabezaMickey()
+        {
+
+            //Contorno de la boca de mickey
+            GraphicsPath BocaMickey = new GraphicsPath();           
+            List<Point> Curvas1 = new List<Point>();
+            Curvas1.Add(new Point(682, 284));
+            Curvas1.Add(new Point(675, 301));
+            Curvas1.Add(new Point(676, 330));
+            BocaMickey.AddCurve(Curvas1.ToArray(), 1);
+            //PaloTimon.AddLine(new Point(462, 152), new Point(434, 291));
+            //PaloTimon.CloseFigure();
+            BocaMickey.AddLine(676, 330, 792, 312);
+            List<Point> Curvas2 = new List<Point>();
+            Curvas2.Add(new Point(792, 312));
+            Curvas2.Add(new Point(812, 314));
+            Curvas2.Add(new Point(820, 334));
+            BocaMickey.AddCurve(Curvas2.ToArray(), 1);
+            List<Point> Curvas3 = new List<Point>();
+            Curvas3.Add(new Point(820, 334));
+            Curvas3.Add(new Point(844, 319));
+            Curvas3.Add(new Point(871, 287));
+            BocaMickey.AddCurve(Curvas3.ToArray(), 1);
+            List<Point> Curvas4 = new List<Point>();
+            Curvas4.Add(new Point(871, 287));
+            Curvas4.Add(new Point(873, 252));
+            Curvas4.Add(new Point(855, 227));
+            BocaMickey.AddCurve(Curvas4.ToArray(), 1);
+            List<Point> Curvas6 = new List<Point>();
+            Curvas6.Add(new Point(855, 227));
+            Curvas6.Add(new Point(829, 220));
+            Curvas6.Add(new Point(794, 226));
+            BocaMickey.AddCurve(Curvas6.ToArray(), 1);
+            List<Point> Curvas7 = new List<Point>();
+            Curvas7.Add(new Point(794, 226));
+            Curvas7.Add(new Point(787, 232));
+            Curvas7.Add(new Point(770, 242));
+            BocaMickey.AddCurve(Curvas7.ToArray(), 1);
+            List<Point> Curvas8 = new List<Point>();
+            Curvas8.Add(new Point(770, 242));
+            Curvas8.Add(new Point(787, 232));
+            Curvas8.Add(new Point(794, 226));
+            BocaMickey.AddCurve(Curvas8.ToArray(), 1);
+            List<Point> Curvas9 = new List<Point>();
+            Curvas9.Add(new Point(794, 226));
+            Curvas9.Add(new Point(810, 202));
+            Curvas9.Add(new Point(818, 176));
+            BocaMickey.AddCurve(Curvas9.ToArray(), 1);
+            List<Point> Curvas10 = new List<Point>();
+            Curvas10.Add(new Point(818, 176));
+            Curvas10.Add(new Point(806, 155));
+            Curvas10.Add(new Point(770, 143));
+            BocaMickey.AddCurve(Curvas10.ToArray(), 1);
+            List<Point> Curvas11 = new List<Point>();
+            Curvas11.Add(new Point(770, 143));
+            Curvas11.Add(new Point(752, 144));
+            Curvas11.Add(new Point(723, 159));
+            BocaMickey.AddCurve(Curvas11.ToArray(), 1);
+            BocaMickey.AddLine(723, 159, 726, 148);
+            List<Point> Curvas12 = new List<Point>();
+            Curvas12.Add(new Point(726, 148));
+            Curvas12.Add(new Point(701, 158));
+            Curvas12.Add(new Point(683, 172));
+            BocaMickey.AddCurve(Curvas12.ToArray(), 1);
+            List<Point> Curvas13 = new List<Point>();
+            Curvas13.Add(new Point(683, 172));
+            Curvas13.Add(new Point(667, 184));
+            Curvas13.Add(new Point(660, 203));
+            BocaMickey.AddCurve(Curvas13.ToArray(), 1);
+            List<Point> Curvas14 = new List<Point>();
+            Curvas14.Add(new Point(660, 203));
+            Curvas14.Add(new Point(646, 196));
+            Curvas14.Add(new Point(629, 198));
+            BocaMickey.AddCurve(Curvas14.ToArray(), 1);
+            List<Point> Curvas15 = new List<Point>();
+            Curvas15.Add(new Point(629, 198));
+            Curvas15.Add(new Point(637, 214));
+            Curvas15.Add(new Point(632, 224));
+            BocaMickey.AddCurve(Curvas15.ToArray(), 1);
+            List<Point> Curvas16 = new List<Point>();
+            Curvas16.Add(new Point(632, 224));
+            Curvas16.Add(new Point(621, 222));
+            Curvas16.Add(new Point(608, 213));
+            BocaMickey.AddCurve(Curvas16.ToArray(), 1);
+            List<Point> Curvas17 = new List<Point>();
+            Curvas17.Add(new Point(608, 213));
+            Curvas17.Add(new Point(619, 246));
+            Curvas17.Add(new Point(647, 271));
+            BocaMickey.AddCurve(Curvas17.ToArray(), 1);
+            List<Point> Curvas18 = new List<Point>();
+            Curvas18.Add(new Point(647, 271));
+            Curvas18.Add(new Point(663, 278));
+            Curvas18.Add(new Point(683, 284));
+            BocaMickey.AddCurve(Curvas18.ToArray(), 1);
+
+
+            Dibujo.DrawPath(LapizAzul, BocaMickey);
+
+        }
+}
 }
 
 
