@@ -28,15 +28,34 @@ namespace Proy_Final_v1
         }
         //Codigo Del Dibujo
         //LAPIZ
-        Pen LapizRojo = new Pen(Color.Red, 5);
-        Pen LapizAzul = new Pen(Color.Blue, 5);
-        SolidBrush BrochaCafe = new SolidBrush(Color.Brown);
+        Color Cafe = Color.FromArgb(80, 39, 39);
+        Color Cafe1 = Color.FromArgb(137,69,69);
+        Color FondoPiso = Color.FromArgb(230,164,88);
+        Color FondoPared = Color.FromArgb(122,71,42);
+        Color Azul1 = Color.FromArgb(89,255,255);
+        Color BancasBarco = Color.FromArgb(82,137,131);
+        Pen LapizRojo = new Pen(Color.Red, 2);
+        Pen LapizAzul = new Pen(Color.Blue, 2);
+        Pen LapizNegro = new Pen(Color.Black, 2);
+        Pen LapizNaranja = new Pen(Color.Orange, 2);
+        Pen LapizBlanco = new Pen(Color.White, 0);
+        SolidBrush BrochaRoja = new SolidBrush(Color.Red);
         SolidBrush BrochaAzul = new SolidBrush(Color.Blue);
         SolidBrush BrochaNegra = new SolidBrush(Color.Black);
         SolidBrush BrochaVerde = new SolidBrush(Color.Green);
+        SolidBrush BrochaNaranja = new SolidBrush(Color.Orange);
+
+        SolidBrush BrochaBlanca = new SolidBrush(Color.White);
         Graphics Dibujo; //Objeto Graphics
         private void Cuadro_Paint(object sender, PaintEventArgs e)
         {
+            Pen LapizBanca = new Pen(BancasBarco, 1);
+            SolidBrush BrochaCafe = new SolidBrush(Cafe);
+            SolidBrush BrochaCafe1 = new SolidBrush(Cafe1);
+            SolidBrush BrochaAzul1 = new SolidBrush(Azul1);
+            SolidBrush BrochaFondoPiso = new SolidBrush(FondoPiso);
+            SolidBrush BrochaFondoPared = new SolidBrush(FondoPared);
+            SolidBrush BrochaBanca = new SolidBrush(BancasBarco);
             //Isauro
             Dibujo = e.Graphics; //Para poder dibujar
             //Lado Izquierdo, Esquina Inferior, Primer rectangulo, lado uno
@@ -121,7 +140,7 @@ namespace Proy_Final_v1
             Curva1.Add(new Point(221, 396));
             Curva1.Add(new Point(216, 399));
             Curva1.Add(new Point(209, 406));
-            Path.AddCurve(Curva1.ToArray(), 3);
+            Path.AddCurve(Curva1.ToArray(), 1);
             Path.CloseFigure();
             Dibujo.DrawPath(LapizRojo, Path);
             Dibujo.FillPath(BrochaCafe, Path);
@@ -158,10 +177,68 @@ namespace Proy_Final_v1
             Dibujo.DrawPath(LapizRojo, SegundaForma);
             Dibujo.FillPath(BrochaVerde, SegundaForma);
 
+            //No Borrar-------------------------------------------------------------------------
+            
+            //Primer Fondo
+            GraphicsPath PrimerFondo = new GraphicsPath();
+            PrimerFondo.AddLine(1279, 141, 499, 138);
+            List<Point> CurvaFizq = new List<Point>();
+            CurvaFizq.Add(new Point(504, 154));
+            CurvaFizq.Add(new Point(510, 181));
+            CurvaFizq.Add(new Point(514, 198));
+            CurvaFizq.Add(new Point(519, 233));
+            CurvaFizq.Add(new Point(526,326));
+            CurvaFizq.Add(new Point(526, 345));
+            CurvaFizq.Add(new Point(524, 394));
+            CurvaFizq.Add(new Point(522,450));
+            CurvaFizq.Add(new Point(519, 478));
+            CurvaFizq.Add(new Point(518, 494));
+            CurvaFizq.Add(new Point(515,500));
+            CurvaFizq.Add(new Point(519, 508));
+            PrimerFondo.AddCurve(CurvaFizq.ToArray(), 1);
+            PrimerFondo.AddLine(519, 508, 1279, 508);
+            PrimerFondo.CloseFigure();
+            Dibujo.FillPath(BrochaFondoPared, PrimerFondo);
+            
+             
+            
+            //Segundo Fondo, El piso
+            GraphicsPath SegundoFondo = new GraphicsPath();
+            SegundoFondo.AddLine(1279,504,516,504);
+            List<Point> CurvafSegundo = new List<Point>();//Primera curva
+            CurvafSegundo.Add(new Point(515, 513));
+            CurvafSegundo.Add(new Point(518, 522));
+            CurvafSegundo.Add(new Point(539, 558));
+            CurvafSegundo.Add(new Point(533, 578));
+            CurvafSegundo.Add(new Point(499, 565));
+            SegundoFondo.AddCurve(CurvafSegundo.ToArray(), 1);
+            List<Point> CurvafSegundo2 = new List<Point>();
+            CurvafSegundo2.Add(new Point(487, 587));
+            CurvafSegundo2.Add(new Point(470, 611));
+            CurvafSegundo2.Add(new Point(436, 637));
+            CurvafSegundo2.Add(new Point(384, 641));
+            CurvafSegundo2.Add(new Point(367, 638));
+            SegundoFondo.AddCurve(CurvafSegundo2.ToArray(), 1);
+            List<Point> CurvafSegundo3 = new List<Point>();
+            CurvafSegundo3.Add(new Point(364, 652));
+            CurvafSegundo3.Add(new Point(354, 686));
+            CurvafSegundo3.Add(new Point(323,701));
+            CurvafSegundo3.Add(new Point(310, 695));
+            SegundoFondo.AddCurve(CurvafSegundo3.ToArray(), 1);
+            SegundoFondo.AddLine(310, 695, 280, 718);
+            SegundoFondo.AddLine(280, 718, 1279, 719);
+            SegundoFondo.CloseFigure();
+            Dibujo.FillPath(BrochaFondoPiso, SegundoFondo);
+            Dibujo.DrawPath(LapizBanca, SegundoFondo);   
+            
+            //Detalles Del Piso
+            Dibujo.DrawLine(LapizNegro, 1036, 504, 1066, 601);
+
+
             //--Primera parte del rectangulo, lado derecho, Entre el timon y cara de mickey mouse, parte superior
             GraphicsPath TerceraForma = new GraphicsPath();
-            TerceraForma.AddLine(499, 136, 710, 136);//Primera linea
-            TerceraForma.AddLine(710, 136, 722, 144);//Segunda linea
+            TerceraForma.AddLine(498, 132, 705, 132);//Primera linea
+            TerceraForma.AddLine(710, 136, 720, 146);//Segunda linea
             List<Point> Curva5 = new List<Point>();//Primera curva
             Curva5.Add(new Point(712, 151));
             Curva5.Add(new Point(689, 163));
@@ -177,17 +254,18 @@ namespace Proy_Final_v1
             Curva6.Add(new Point(580, 189));
             Curva6.Add(new Point(584, 195));
             TerceraForma.AddCurve(Curva6.ToArray(), 1);
-            TerceraForma.AddLine(584, 195, 514, 196);//Cuarta linea
+            TerceraForma.AddLine(584, 195, 514, 195);//Cuarta linea
             TerceraForma.CloseFigure();
-            Dibujo.DrawPath(LapizAzul, TerceraForma);
+            Dibujo.DrawPath(LapizBanca, TerceraForma);
+            Dibujo.FillPath(BrochaBanca, TerceraForma);
             //--Segunda parte del rectangulo, lado derecho,cerca de la cara de mickey, parte superior
             GraphicsPath CuartaForma = new GraphicsPath();
-            CuartaForma.AddLine(896, 135, 1279, 139);//Primera linea
+            CuartaForma.AddLine(896, 132, 1279, 132);//Primera linea
             CuartaForma.AddLine(1279, 139, 1279, 205);//Segunda linea
-            CuartaForma.AddLine(1279, 205, 1219, 202);//Tercera linea
-            CuartaForma.AddLine(1219, 202, 1156, 199);//Cuarta linea
-            CuartaForma.AddLine(1156, 199, 1103, 199);//Quinta linea
-            CuartaForma.AddLine(1103, 199, 983, 200);//Sexta linea
+            CuartaForma.AddLine(1279, 200, 1219, 200);//Tercera linea
+          //  CuartaForma.AddLine(1219, 202, 1156, 199);//Cuarta linea
+          //  CuartaForma.AddLine(1156, 199, 1103, 199);//Quinta linea
+            CuartaForma.AddLine(1103, 200, 983, 200);//Sexta linea
             List<Point> Curva7 = new List<Point>();//Primera curva
             Curva7.Add(new Point(978, 186));
             Curva7.Add(new Point(972, 176));
@@ -198,9 +276,9 @@ namespace Proy_Final_v1
             Curva7.Add(new Point(880, 154));
             CuartaForma.AddCurve(Curva7.ToArray(),1);
             CuartaForma.CloseFigure();
-            Dibujo.DrawPath(LapizRojo, CuartaForma);
-
-
+            Dibujo.DrawPath(LapizBanca, CuartaForma);
+            Dibujo.FillPath(BrochaBanca, CuartaForma);
+            /*
             //--Primera forma poligonal con curvas, cerca del salvavidas
             GraphicsPath QuintaForma = new GraphicsPath();
             QuintaForma.AddLine(982, 202, 1157, 201);//Primera linea
@@ -269,7 +347,7 @@ namespace Proy_Final_v1
             QuintaForma.AddCurve(Curva16.ToArray(), 1);
             QuintaForma.CloseFigure();
             Dibujo.DrawPath(LapizAzul, QuintaForma);
-
+            */
 
             //Timon Agarradera1
             List<Point> Curvas8 = new List<Point>();
@@ -450,16 +528,148 @@ namespace Proy_Final_v1
 
             Timon.AddCurve(Curvas27.ToArray(), 1);
             Timon.AddLine(new Point(285, 373), new Point(267, 375));
-
-
             Dibujo.DrawPath(LapizRojo, Timon);
 
+            //Codigo Isauro
+            
+            /*
+            //Salvavidas-------------------------------------------------------------------
+            GraphicsPath Salvavidas = new GraphicsPath();
+            List<Point> PrimeraCurvaSal = new List<Point>();//Primera curva
+            PrimeraCurvaSal.Add(new Point(1156, 201));
+            PrimeraCurvaSal.Add(new Point(1120, 206));
+            PrimeraCurvaSal.Add(new Point(1094, 219));
+            PrimeraCurvaSal.Add(new Point(1063, 245));
+            PrimeraCurvaSal.Add(new Point(1038, 281));
+            PrimeraCurvaSal.Add(new Point(1024, 328));
+            Salvavidas.AddCurve(PrimeraCurvaSal.ToArray(),0);
+            Salvavidas.CloseFigure();
+            //Dibujo.DrawPath(LapizRojo, Salvavidas);
+            //Falta por terminar
+            */
 
+            //Salvavidas----------------------------
+            Point PC3 = new Point(1174,199 + 15);
+            Point PC4 = new Point(1187,471);
+            int diametro2 = PC4.Y - PC3.Y;
+            Dibujo.DrawEllipse(LapizRojo,new Rectangle(1025,202,diametro2 + 40,diametro2 + 10));
+            Dibujo.FillEllipse(BrochaRoja, new Rectangle(1025, 202, diametro2 + 40, diametro2 + 10));
+            
 
+            //Circulo interior del timon
+            Point Pc1 = new Point(1173, 300);
+            Point Pc2 = new Point(1177, 376);
+            int Diametro1 = Pc2.Y - Pc1.Y;
+            Dibujo.DrawEllipse(LapizNaranja, new Rectangle(1131, 300, Diametro1 + 13, Diametro1));
+            Dibujo.FillEllipse(BrochaCafe, new Rectangle(1131, 300, Diametro1 + 13, Diametro1));
 
+            //Primera cuerda
+            GraphicsPath PrimeraCuerda = new GraphicsPath();
+            List<Point> Curvacuerda1 = new List<Point>();//Curva superior
+            Curvacuerda1.Add(new Point(1022,326));
+            Curvacuerda1.Add(new Point(1052,343));
+            Curvacuerda1.Add(new Point(1064,348));
+            Curvacuerda1.Add(new Point(1081, 349));
+            Curvacuerda1.Add(new Point(1096,348));
+            //Curvacuerda1.Add(new Point(1111, 347));
+            Curvacuerda1.Add(new Point(1130, 339));
 
+            //Primer lado de la primera cuerda (Derecha)
+            //Curvacuerda1.Add(new Point(1132, 342));
+            //Curvacuerda1.Add(new Point(1129, 350));
+            //Curva Inferior1
+            Curvacuerda1.Add(new Point(1120,354));
+           // Curvacuerda1.Add(new Point(1104,359));
+           // Curvacuerda1.Add(new Point(1073,360));
+            Curvacuerda1.Add(new Point(1052, 357));
+          //  Curvacuerda1.Add(new Point(1032, 348));
+            //Curvacuerda1.Add(new Point(1019,339));
+            //Segundo lado de la primera cuerda (Izquierda)
+           // Curvacuerda1.Add(new Point(1018, 338));
+           // Curvacuerda1.Add(new Point(1020, 328));
+            //PrimeraCuerda.AddCurve(Curvacuerda1.ToArray(), 1);
+            PrimeraCuerda.AddClosedCurve(Curvacuerda1.ToArray(), 1);
+           // PrimeraCuerda.CloseFigure();
+            Dibujo.DrawPath(LapizNegro, PrimeraCuerda);
+            Dibujo.FillPath(BrochaBlanca, PrimeraCuerda);
 
+            //Segunda cuerda
+            GraphicsPath Segundacuerda = new GraphicsPath();
+            List<Point> Curvacuerda2 = new List<Point>();
+            Curvacuerda2.Add(new Point(1169, 470));//Primera curva(lado izquierdo)
+            Curvacuerda2.Add(new Point(1178,458));
+            Curvacuerda2.Add(new Point(1183,442));
+            Curvacuerda2.Add(new Point(1184,426));
+            Curvacuerda2.Add(new Point(1182,407));
+            Curvacuerda2.Add(new Point(1178, 386));
+            Curvacuerda2.Add(new Point(1177, 380));
+            //Primer lado (lado superior)
+            Curvacuerda2.Add(new Point(1178, 374));
+           // Curvacuerda2.Add(new Point(1182, 375));
+            Curvacuerda2.Add(new Point(1187, 376));
+           // Curvacuerda2.Add(new Point(1189, 378));
+            //Segunda curva de la cuerda (lado derecho)
+            //Curvacuerda2.Add(new Point(1191,389));
+            Curvacuerda2.Add(new Point(1194, 399));
+            Curvacuerda2.Add(new Point(1194, 428));
+            //Curvacuerda1.Add(new Point(1195, 412));
+            Curvacuerda2.Add(new Point(1191, 448));
+            Curvacuerda2.Add(new Point(1185, 465));
+            Curvacuerda2.Add(new Point(1180, 471));
+            Curvacuerda2.Add(new Point(1176, 474));
+            //Segundo lado (Lado inferior)
+            Curvacuerda2.Add(new Point(1171, 473));
+            Curvacuerda2.Add(new Point(1170, 472));
+            Segundacuerda.AddClosedCurve(Curvacuerda2.ToArray(), 1);
+            Segundacuerda.CloseFigure();
+            Dibujo.DrawPath(LapizNegro, Segundacuerda);
+            Dibujo.FillPath(BrochaBlanca, Segundacuerda);
 
+            //Tercera cuerda
+            GraphicsPath TerceraCuerda = new GraphicsPath();
+            List<Point> Curvacuerda3 = new List<Point>();//Primera curva (lado superior
+            Curvacuerda3.Add(new Point(1278, 349));
+            Curvacuerda3.Add(new Point(1253,348));
+            Curvacuerda3.Add(new Point(1230,344));
+            //Lado izquierdo
+            Curvacuerda3.Add(new Point(1215, 332));
+            Curvacuerda3.Add(new Point(1221, 330));
+            Curvacuerda3.Add(new Point(1225,332));
+            //Segunda curva (lado inferior)
+            Curvacuerda3.Add(new Point(1227,332));
+            Curvacuerda3.Add(new Point(1239,336));
+            Curvacuerda3.Add(new Point(1251,339));
+            Curvacuerda3.Add(new Point(1278,340));
+            TerceraCuerda.AddCurve(Curvacuerda3.ToArray(), 1);
+            TerceraCuerda.CloseFigure();
+            Dibujo.DrawPath(LapizNegro, TerceraCuerda);
+            Dibujo.FillPath(BrochaBlanca, TerceraCuerda);
+
+            //Cuarta cuerda
+            GraphicsPath Cuartacuerda = new GraphicsPath();
+            List<Point> Curvacuerda4 = new List<Point>();
+            Curvacuerda4.Add(new Point(1157,203));//Primera curva (lado izquierdo)
+            Curvacuerda4.Add(new Point(1160,232));
+            Curvacuerda4.Add(new Point(1163,256));
+            Curvacuerda4.Add(new Point(1164, 276));
+            Curvacuerda4.Add(new Point(1160, 296));
+            //Lado inferior
+            Curvacuerda4.Add(new Point(1163, 301));
+            Curvacuerda4.Add(new Point(1167, 303));
+            Curvacuerda4.Add(new Point(1172, 301));
+            //Segunda curva(lado derecho)
+            Curvacuerda4.Add(new Point(1176, 291));
+            Curvacuerda4.Add(new Point(1179,264));
+            Curvacuerda4.Add(new Point(1178,241));
+            Curvacuerda4.Add(new Point(1176,213));
+            Curvacuerda4.Add(new Point(1172,199));
+            //Lado superior
+            Curvacuerda4.Add(new Point(1165, 196));
+            Curvacuerda4.Add(new Point(1160, 196));
+            Cuartacuerda.AddCurve(Curvacuerda4.ToArray(), 1);
+            Cuartacuerda.CloseFigure();
+            Dibujo.DrawPath(LapizNegro, Cuartacuerda);
+            Dibujo.FillPath(BrochaBlanca, Cuartacuerda);
 
         }
 
